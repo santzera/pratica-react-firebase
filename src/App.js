@@ -1,12 +1,12 @@
 import  {useState, useEffect} from 'react'
 
-import firestore from './firebaseApp'
+import  { firestore } from './firebaseApp'
 
 function App(){
     const [tarefas, setTarefas] =  useState([])
 
     function loadItems(){
-    firestore.collection("tarefas".).get().then((querySnapshot) => {
+    firestore.collection("tarefas").get().then((querySnapshot) => {
         const items = []
         querySnapshot.forEach((doc) => {
             items.push({
